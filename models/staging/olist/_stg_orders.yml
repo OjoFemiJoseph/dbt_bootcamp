@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Sales record from Olist"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        data_tests:
+          - unique
+      - name: customer_id
+        description: "Unique identifier for customers"
+        

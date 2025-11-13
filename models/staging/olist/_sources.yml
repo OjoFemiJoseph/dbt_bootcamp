@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: olist # custom name or database name
+    database: warehouse_stg
+    schema: dbt_dev
+    description: 'This is the sales data from Olist'
+    tables:
+      - name: customers
+      - name: geolocation
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: orders
+      - name: product_category
+      - name: products
+      - name: sellers
