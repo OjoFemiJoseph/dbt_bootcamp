@@ -1,8 +1,22 @@
-with order_item_data as (
-    select *
-    from {{ source('olist', 'order_items')}}
+with source as (
+
+    select * from {{ source('olist', 'order_items') }}
+
+),
+
+renamed as (
+
+    select
+        order_id,
+        order_item_id,
+        product_id,
+        seller_id,
+        shipping_limit_date,
+        price,
+        freight_value
+
+    from source
+
 )
 
-
-select *
-from order_item_data
+select * from renamed

@@ -4,7 +4,8 @@ with order_data as (
 )
 
 
-select order_id,
+select 
+        order_id,
         customer_id,
         order_status,
         order_purchase_timestamp as order_date,

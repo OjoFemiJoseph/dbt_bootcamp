@@ -1,8 +1,20 @@
-with order_payment_data as (
-    select *
-    from {{ source('olist', 'order_payments')}}
+with source as (
+
+    select * from {{ source('olist', 'order_payments') }}
+
+),
+
+renamed as (
+
+    select
+        order_id,
+        payment_sequential,
+        payment_type,
+        payment_installments,
+        payment_value
+
+    from source
+
 )
 
-
-select *
-from order_payment_data
+select * from renamed

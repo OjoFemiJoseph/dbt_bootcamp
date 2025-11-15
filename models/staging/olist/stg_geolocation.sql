@@ -1,8 +1,20 @@
-with geolocation_data as (
-    select *
-    from {{ source('olist', 'geolocation')}}
+with source as (
+
+    select * from {{ source('olist', 'geolocation') }}
+
+),
+
+renamed as (
+
+    select
+        geolocation_zip_code_prefix,
+        geolocation_lat,
+        geolocation_lng,
+        geolocation_city,
+        geolocation_state
+
+    from source
+
 )
 
-
-select *
-from geolocation_data
+select * from renamed
