@@ -6,8 +6,8 @@ models:
     columns:
       - name: CUSTOMER_ZIP_CODE_PREFIX
         description: "Customer Zip code"
-      - name: CUSTOMER_ID
+      - name: customer_id
         description: "Unique Identifier for our customers"
         data_tests:
           - unique
-          - not null
+          - not_null
