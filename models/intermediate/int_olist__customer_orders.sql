@@ -8,7 +8,6 @@ with customers as (
         customer_state
     from {{ ref('stg_customers') }}
 ),
-
 orders as (
     select *
     from {{ ref('int_olist__order_enriched') }}
