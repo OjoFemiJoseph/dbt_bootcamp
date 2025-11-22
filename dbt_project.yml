@@ -41,3 +41,8 @@ models:
       +materialized: table
       +database: transformations
       +schema: staging
+
+    mart:
+      +materialized: table
+      +database: analytics
+      +schema: reporting
