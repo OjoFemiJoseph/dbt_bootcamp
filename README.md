@@ -4,7 +4,7 @@ A comprehensive dbt project using the Brazilian E-Commerce (Olist) dataset to de
 
 ### Live Recording
 - Day 1 - [Watch Here!](https://drive.google.com/file/d/1uJ53_IAPAotF2LRJo1TF5GH6E2AWqdVC/view?usp=drive_link)
-- Day 2
+- Day 2 - [Watch Here!](https://drive.google.com/file/d/1d5PUryDLZtgElCymuvyZdmXkbUo9r_vS/view?usp=drive_link)
 - Day 3
 - Day 4
 
