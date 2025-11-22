@@ -34,3 +34,10 @@ models:
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
+      +database: transformations
+      +schema: staging
+    
+    intermediate:
+      +materialized: table
+      +database: transformations
+      +schema: staging
