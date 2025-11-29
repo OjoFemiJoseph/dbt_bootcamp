@@ -19,7 +19,7 @@ customer_orders_agg as (
         -- purchase counts & revenue
         count(distinct o.order_id) as total_orders,
         sum(coalesce(o.payment_value, 0)) as total_revenue,
-        avg(nullif(o.payment_value,0)) as avg_order_value, 
+        avg(nullif(o.payment_value, 0)) as avg_order_value,
         count(distinct o.product_id) as distinct_products_purchased,
 
         -- order dates
@@ -41,17 +41,17 @@ customer_orders_final as (
     select
         coa.*,
         case
-            when coa.first_order_date is not null and coa.last_order_date is not null
-            then datediff(day, date(coa.first_order_date), date(coa.last_order_date))
+            when coa.first_order_date is not null and coa.last_order_date is not null then
+                -- tenure = last order date minus first order date
+                date_diff(date(coa.last_order_date), date(coa.first_order_date), day)
             else null
         end as tenure_days,
         case
-            when coa.last_order_date is not null
-            then datediff(day, date(coa.last_order_date), current_date())
+            when coa.last_order_date is not null then
+                -- days since last order = today minus last order date
+                date_diff(current_date(), date(coa.last_order_date), day)
             else null
         end as days_since_last_order
-        
-
     from customer_orders_agg coa
 )
 
