@@ -1,3 +1,11 @@
+{{
+    config(
+        tags= "dim",
+        group = "sample_group",
+        materialized='table'
+    )
+}}
+
 with agg_customers as (
     
     select *
@@ -18,3 +26,6 @@ select
     current_timestamp() as updated_at
 
 from agg_customers
+{% if env_var('DBT_ROW_LIMIT', False) %}
+    limit {{ env_var('DBT_ROW_LIMIT') }}
+{% endif %}
