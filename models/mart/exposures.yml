@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: sample_exposures
+    type: dashboard
+    owner:
+      name: joseph ojo
+      email: joseph.ojo@joeCorp.com
+    depends_on:
+      - ref('dim_products')
+    description: Monthly sales dashboard used by the executive team.
+    url: https://looker.company.com/dashboards/123
+    maturity: high

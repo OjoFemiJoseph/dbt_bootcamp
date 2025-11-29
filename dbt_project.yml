@@ -44,3 +44,9 @@ models:
       +materialized: table
       +database: analytics
       +schema: reporting
+
+on-run-start:
+  - "{{ check_sanity() }}"
+
+on-run-end: 
+  - "{{ log_dbt_results(results) }}"
