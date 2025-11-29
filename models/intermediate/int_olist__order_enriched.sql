@@ -1,23 +1,19 @@
 with order_items as (
     select *
     from {{ ref('stg_order_items') }}
-
-
 ),
 
-    orders as (
+orders as (
     select *
     from {{ ref('stg_orders') }}
-
-
 ),
-    order_payments as (
+
+order_payments as (
     select 
         order_id, 
         sum(payment_value) as payment_value
     from {{ ref('stg_order_payments') }}
     group by 1
-
 ),
 
 final as (
@@ -35,12 +31,11 @@ final as (
         --order_payments.payment_type,
         --order_payments.payment_installments,
         order_payments.payment_value
-
     from order_items
-        left join orders 
-            on order_items.order_id = orders.order_id
-        left join order_payments
-            on orders.order_id = order_payments.order_id
-
+    left join orders 
+        on order_items.order_id = orders.order_id
+    left join order_payments
+        on orders.order_id = order_payments.order_id
 )
+
 select * from final
