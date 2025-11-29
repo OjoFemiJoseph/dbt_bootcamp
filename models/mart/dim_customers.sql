@@ -14,6 +14,7 @@ select
     last_order_date,
     is_repeat_customer,
     tenure_days,
-    days_since_last_order
+    days_since_last_order,
+    current_timestamp() as updated_at
 
 from agg_customers
