@@ -2,8 +2,7 @@ version: 2
 
 sources:
   - name: olist # custom name or database name
-    database: warehouse_stg
-    schema: dbt_dev
+    schema: dbt_day4
     description: 'This is the sales data from Olist'
     tables:
       - name: customers
