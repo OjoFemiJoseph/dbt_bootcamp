@@ -1,3 +1,9 @@
+{{
+    config(
+        config='views'
+    )
+}}
+
 with source as (
 
     select * from {{ source('olist', 'sellers') }}
