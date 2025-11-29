@@ -26,6 +26,6 @@ select
     current_timestamp() as updated_at
 
 from agg_customers
-{% if env_var('DBT_ROW_LIMIT') %}
+{% if env_var('DBT_ROW_LIMIT', False) %}
     limit {{ env_var('DBT_ROW_LIMIT') }}
 {% endif %}
