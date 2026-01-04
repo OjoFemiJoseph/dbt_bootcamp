@@ -44,3 +44,7 @@ models:
       +materialized: table
       +database: analytics
       +schema: reporting
+
+    elementary:
+      ## elementary models will be created in the schema '<your_schema>_elementary'
+      +schema: "elementary"
