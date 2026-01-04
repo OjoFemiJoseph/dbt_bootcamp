@@ -1,0 +1,17 @@
+version: 2
+
+seeds:
+  - name: customers
+    description: Customer master data
+
+  - name: products
+    description: Product catalog
+
+  - name: orders
+    description: Customer orders
+
+  - name: order_items
+    description: Line level order details
+
+  - name: loyalty_points
+    description: Loyalty points earned by customers

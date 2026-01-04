@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: "{{ target.schema }}"
+    tables:
+      - name: customers
+      - name: products
+      - name: orders
+      - name: orders_items
+      - name: loyalty_points

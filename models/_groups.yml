@@ -1,6 +1,0 @@
-version: 2
-
-groups:
-  - name: sample_group
-    owner:
-      email: sample_group@joeCorp.com
