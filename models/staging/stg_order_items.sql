@@ -12,7 +12,8 @@ final as (
         cast(order_id as integer) as order_id,
         cast(product_id as integer) as product_id,
         cast(quantity as integer) as quantity,
-        cast(line_total as numeric) as line_total
+        cast(line_total as numeric) as line_total,
+        current_date() as date_column
     from source
 
 )
